@@ -13,8 +13,8 @@ import com.kneat.megalightmeter.facade.CalculateStopsFacade;
 @RestController
 public class CalculateStopsController {
 	private final Logger LOGGER = LoggerFactory.getLogger(CalculateStopsController.class);
+
 	@Autowired private CalculateStopsFacade facade;
-	
 
 	@GetMapping("/calculate-stops/{distance}")
 	public ResponseEntity<String> calculateStops(@PathVariable("distance") final Long distanceInMGLT) {

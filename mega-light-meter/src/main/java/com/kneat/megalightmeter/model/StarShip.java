@@ -67,6 +67,10 @@ public class StarShip {
 				.equals("unknown");
 	}
 
+	public ConsumablesObject getConsumablesObject() {
+		return new ConsumablesObject(consumables);
+	}
+
 	@Override
 	public String toString() {
 		return "StarShip [name=" + name + ", megaLight=" + megaLight + ", consumables=" + consumables + ", url=" + url
