@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
  * code. If it isn't the expected behavior, just override the method
  * {@link #getStatusCode()}.
  */
-public abstract class KneatException extends RuntimeException {
+public abstract class KneatException extends Exception {
 	private static final long serialVersionUID = 2000896977769533798L;
 	private final String[] messageParams;
 

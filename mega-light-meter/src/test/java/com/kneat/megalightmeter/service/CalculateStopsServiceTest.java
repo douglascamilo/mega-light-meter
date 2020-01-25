@@ -61,12 +61,13 @@ public class CalculateStopsServiceTest {
 
 	@Test
 	public void calculateStopsForConsumablesInYears() {
-		final long totalDistance = 900000L;
-		final StarShip starShip = new StarShip("10", "3 years");
+		final long totalDistance = 90000000000L;
+		final StarShip starShip = new StarShip("40", "6 years");
 
 		final CalculateStopsResponse response = this.performCalculation(totalDistance, starShip).iterator().next();
 
-		assertTrue(response.getStops().intValue() == 3);
+		System.out.println(response);
+		assertTrue(response.getStops().intValue() == 42808);
 	}
 
 	private List<CalculateStopsResponse> performCalculation(

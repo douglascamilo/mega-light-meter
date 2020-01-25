@@ -9,7 +9,6 @@ import com.kneat.megalightmeter.converter.HourConsumableConverter;
 import com.kneat.megalightmeter.converter.MonthToHourConsumableConverter;
 import com.kneat.megalightmeter.converter.WeekToHourConsumableConverter;
 import com.kneat.megalightmeter.converter.YearToHourConsumableConverter;
-import com.kneat.megalightmeter.exception.InvalidConsumablesUnitException;
 
 /**
  *  Enumeration that matches the consumable unit(s) to a {@linkplain ConsumableConverter} implementation's name.
@@ -42,16 +41,13 @@ public enum ConsumablesUnitEnum {
 	 * Returns a {@linkplain ConsumablesUnitEnum} which matches with the given consumable unit.
 	 *
 	 * @param unit measure unit for consumables
-	 * @return Cons
-	 * @throws InvalidConsumablesUnitException
+	 * @return {@linkplain ConsumablesUnitEnum}
 	 */
-	public static ConsumablesUnitEnum getEnumBy(final String unit) throws InvalidConsumablesUnitException {
+	public static ConsumablesUnitEnum getEnumBy(final String unit) {
 		return Arrays.asList(values())
 				.stream()
 				.filter(itemEnum -> itemEnum.consumablesUnit.contains(unit))
 				.findFirst()
-				.orElseThrow(() -> {
-					throw new InvalidConsumablesUnitException("invalid.consumables.unit", unit);
-				});
+				.orElse(null);
 	}
 }
