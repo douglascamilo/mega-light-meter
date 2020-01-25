@@ -16,6 +16,14 @@ public class StarShip {
 	private String consumables;
 	private String url;
 
+	public StarShip () {}
+
+	public StarShip(final String megaLight, final String consumables) {
+		super();
+		this.megaLight = megaLight;
+		this.consumables = consumables;
+	}
+
 	public final String getName() {
 		return name;
 	}
@@ -65,6 +73,10 @@ public class StarShip {
 				.orElse("unknown")
 				.toLowerCase()
 				.equals("unknown");
+	}
+
+	public Integer getMegaLightInteger() {
+		return Integer.parseInt(megaLight);
 	}
 
 	public ConsumablesObject getConsumablesObject() {

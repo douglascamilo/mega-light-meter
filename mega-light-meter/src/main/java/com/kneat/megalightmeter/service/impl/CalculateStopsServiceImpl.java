@@ -22,14 +22,21 @@ public class CalculateStopsServiceImpl implements CalculateStopsService {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public List<CalculateStopsResponse> calculate(final Long distanceInMGLT, final List<StarShip> retrievedStarShips) {
+	public List<CalculateStopsResponse> calculate(final Long totalDistanceInMGLT, final List<StarShip> retrievedStarShips) {
 		return retrievedStarShips.stream()
 				.map(starShip -> {
-					final Integer consumableInHours = consumableConverter.convert(starShip.getConsumablesObject());
-					// TODO - Implements the calculation...
+					final int consumableInHours = consumableConverter.convert(starShip.getConsumablesObject());
+					final int totalStopsToResupply = this.calculateStopsToResupply(
+							totalDistanceInMGLT, consumableInHours, starShip.getMegaLightInteger());
 
-					return new CalculateStopsResponse(starShip.getName(), consumableInHours);
+					return new CalculateStopsResponse(starShip.getName(), totalStopsToResupply, starShip.getUrl());
 				})
 				.collect(Collectors.toList());
+	}
+
+	private int calculateStopsToResupply(final long totalDistanceInMGLT, final int starShipConsumableInHours,
+			final int starShipSpeed) {
+
+		return (int) (totalDistanceInMGLT / starShipSpeed) / starShipConsumableInHours;
 	}
 }

@@ -23,11 +23,11 @@ public class CalculateStopsFacadeImpl implements CalculateStopsFacade {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String getAllNeededStopsByStarShip(final Long distanceInMGLT) {
+	public List<CalculateStopsResponse> getAllNeededStopsByStarShip(final Long distanceInMGLT) {
 		final List<StarShip> retrievedStarShips = swapiService.retrieveAllStarShips();
 		final List<CalculateStopsResponse> response =
 				calculateStopsService.calculate(distanceInMGLT, retrievedStarShips);
 
-		return response.toString();
+		return response;
 	}
 }

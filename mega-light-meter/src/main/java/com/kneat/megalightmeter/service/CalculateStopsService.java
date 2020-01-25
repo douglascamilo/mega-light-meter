@@ -13,9 +13,9 @@ public interface CalculateStopsService {
 	/**
 	 * Perform the calculation of required stops(for resupply) to cover the given distance.
 	 *
-	 * @param distanceInMGLT - Distance in MegaLights
+	 * @param totalDistanceInMGLT - Total distance in MegaLights
 	 * @param retrievedStarShips - List of StarShips
 	 * @return A list containing the name and required stops for each StarShip.
 	 */
-	List<CalculateStopsResponse> calculate(Long distanceInMGLT, List<StarShip> retrievedStarShips);
+	List<CalculateStopsResponse> calculate(Long totalDistanceInMGLT, List<StarShip> retrievedStarShips);
 }
