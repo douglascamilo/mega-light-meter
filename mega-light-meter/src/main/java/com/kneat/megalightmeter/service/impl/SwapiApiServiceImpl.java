@@ -1,10 +1,11 @@
-package com.kneat.megalightmeter.service.impl;
+ package com.kneat.megalightmeter.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import com.kneat.megalightmeter.helper.SwapiApiHelper;
@@ -23,6 +24,7 @@ public class SwapiApiServiceImpl implements SwapiApiService {
 	 * {@inheritDoc}
 	 */
 	@Override
+	@Cacheable("starships")
 	public List<StarShip> retrieveAllStarShips() {
 		final List<StarShip> starShips = new ArrayList<>();
 		String url = "https://swapi.co/api/starships";
