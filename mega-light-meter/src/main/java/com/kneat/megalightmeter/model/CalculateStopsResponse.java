@@ -28,6 +28,6 @@ public class CalculateStopsResponse {
 
 	@Override
 	public String toString() {
-		return "CalculateStopsResponse [name=" + name + ", stops=" + stops + ", urlResource=" + urlResource + "]";
+		return "\n" + name + " -> " + stops + " stops";
 	}
 }
