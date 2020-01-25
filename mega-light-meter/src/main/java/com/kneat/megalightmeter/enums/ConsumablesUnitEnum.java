@@ -4,22 +4,22 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.kneat.megalightmeter.converter.ConsumableConverter;
-import com.kneat.megalightmeter.converter.DaysConsumableConverter;
-import com.kneat.megalightmeter.converter.HoursConsumableConverter;
-import com.kneat.megalightmeter.converter.MonthsConsumableConverter;
-import com.kneat.megalightmeter.converter.WeeksConsumableConverter;
-import com.kneat.megalightmeter.converter.YearsConsumableConverter;
+import com.kneat.megalightmeter.converter.DayToHourConsumableConverter;
+import com.kneat.megalightmeter.converter.HourConsumableConverter;
+import com.kneat.megalightmeter.converter.MonthToHourConsumableConverter;
+import com.kneat.megalightmeter.converter.WeekToHourConsumableConverter;
+import com.kneat.megalightmeter.converter.YearToHourConsumableConverter;
 import com.kneat.megalightmeter.exception.InvalidConsumablesUnitException;
 
 /**
  *  Enumeration that matches the consumable unit(s) to a {@linkplain ConsumableConverter} implementation's name.
  */
 public enum ConsumablesUnitEnum {
-	YEARS(YearsConsumableConverter.BEAN_NAME, "years", "year"),
-	MONTHS(MonthsConsumableConverter.BEAN_NAME, "months", "month"),
-	WEEKS(WeeksConsumableConverter.BEAN_NAME, "weeks", "week"),
-	DAYS(DaysConsumableConverter.BEAN_NAME, "days", "day"),
-	HOURS(HoursConsumableConverter.BEAN_NAME, "hours", "hour"),
+	YEARS(YearToHourConsumableConverter.BEAN_NAME, "years", "year"),
+	MONTHS(MonthToHourConsumableConverter.BEAN_NAME, "months", "month"),
+	WEEKS(WeekToHourConsumableConverter.BEAN_NAME, "weeks", "week"),
+	DAYS(DayToHourConsumableConverter.BEAN_NAME, "days", "day"),
+	HOURS(HourConsumableConverter.BEAN_NAME, "hours", "hour"),
 	;
 
 	private final List<String> consumablesUnit;
@@ -39,7 +39,7 @@ public enum ConsumablesUnitEnum {
 	}
 
 	/**
-	 * Returns a {@linkplain ConsumablesUnitEnum} which matches with the given unit.
+	 * Returns a {@linkplain ConsumablesUnitEnum} which matches with the given consumable unit.
 	 *
 	 * @param unit measure unit for consumables
 	 * @return Cons

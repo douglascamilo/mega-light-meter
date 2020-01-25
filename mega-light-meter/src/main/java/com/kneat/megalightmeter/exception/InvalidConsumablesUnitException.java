@@ -1,15 +1,15 @@
 package com.kneat.megalightmeter.exception;
 
-public class InvalidConsumablesUnitException extends RuntimeException {
-	private static final long serialVersionUID = -5371049601983498737L;
-	private final String[] messageParams;
+import com.kneat.megalightmeter.enums.ConsumablesUnitEnum;
 
-	public InvalidConsumablesUnitException(final String messageId, final String... messageParams) {
-		super(messageId);
-		this.messageParams = messageParams;
-	}
+/**
+ * This exception is thrown when occurs an error trying get an
+ * {@linkplain ConsumablesUnitEnum} from an invalid consumable unit.
+ */
+public class InvalidConsumablesUnitException extends KneatException {
+	private static final long serialVersionUID = 4611572827745459472L;
 
-	public final String[] getMessageParams() {
-		return messageParams;
+	public InvalidConsumablesUnitException(final String... messageParams) {
+		super("invalid.consumables.unit", messageParams);
 	}
 }

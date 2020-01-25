@@ -22,21 +22,25 @@ public class CalculateStopsServiceImpl implements CalculateStopsService {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public List<CalculateStopsResponse> calculate(final Long totalDistanceInMGLT, final List<StarShip> retrievedStarShips) {
-		return retrievedStarShips.stream()
-				.map(starShip -> {
-					final int consumableInHours = consumableConverter.convert(starShip.getConsumablesObject());
-					final int totalStopsToResupply = this.calculateStopsToResupply(
-							totalDistanceInMGLT, consumableInHours, starShip.getMegaLightInteger());
+	public List<CalculateStopsResponse> calculate(
+			final Long totalDistanceInMGLT, final List<StarShip> retrievedStarships) {
 
-					return new CalculateStopsResponse(starShip.getName(), totalStopsToResupply, starShip.getUrl());
-				})
+		return retrievedStarships.stream()
+				.map(starship -> this.calculateStopsByStarship(totalDistanceInMGLT, starship))
 				.collect(Collectors.toList());
 	}
 
-	private int calculateStopsToResupply(final long totalDistanceInMGLT, final int starShipConsumableInHours,
-			final int starShipSpeed) {
+	private CalculateStopsResponse calculateStopsByStarship(final Long totalDistanceInMGLT, final StarShip starShip) {
+		final int consumableInHours = consumableConverter.convert(starShip.getConsumablesObject());
+		final long totalStopsToResupply = this.calculateStopsForResupply(
+				totalDistanceInMGLT, consumableInHours, starShip.getMegaLightInteger());
 
-		return (int) (totalDistanceInMGLT / starShipSpeed) / starShipConsumableInHours;
+		return new CalculateStopsResponse(starShip.getName(), totalStopsToResupply, starShip.getUrl());
+	}
+
+	private long calculateStopsForResupply(final long totalDistanceInMGLT, final int starshipConsumableInHours,
+			final int starshipSpeed) {
+
+		return ((totalDistanceInMGLT / starshipSpeed) / starshipConsumableInHours);
 	}
 }

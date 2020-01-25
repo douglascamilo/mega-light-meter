@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 /**
  * This implementation converts consumable in weeks to hours.
  */
-@Component(WeeksConsumableConverter.BEAN_NAME)
-public class WeeksConsumableConverter implements ConsumableConverter {
-	public static final String BEAN_NAME = "WeeksConsumableConverter";
+@Component(WeekToHourConsumableConverter.BEAN_NAME)
+public class WeekToHourConsumableConverter implements ConsumableConverter {
+	public static final String BEAN_NAME = "WeekToHourConsumableConverter";
 
-	@Autowired DaysConsumableConverter daysConverter;
+	@Autowired DayToHourConsumableConverter dayToHourConverter;
 
 	/**
 	 * {@inheritDoc}
@@ -18,6 +18,6 @@ public class WeeksConsumableConverter implements ConsumableConverter {
 	@Override
 	public Integer converter(final Integer consumables) {
 		final int consumableInDays = consumables * 7;
-		return daysConverter.converter(consumableInDays);
+		return dayToHourConverter.converter(consumableInDays);
 	}
 }

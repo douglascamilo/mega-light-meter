@@ -28,7 +28,7 @@ public class SwapiApiServiceImpl implements SwapiApiService {
 		String url = "https://swapi.co/api/starships";
 
 		while(Objects.nonNull(url)) {
-			final StarShipResource resource = helper.retrieveStarShipsFrom(url, StarShipResource.class);
+			final StarShipResource resource = helper.retrieveStarShipsFrom(url);
 
 			url = resource.getNext();
 			starShips.addAll(resource.onlyValidStarShips());

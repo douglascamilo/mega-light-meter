@@ -1,11 +1,14 @@
 package com.kneat.megalightmeter.model;
 
+/**
+ * Representation of the data returned by the rest controller.
+ */
 public class CalculateStopsResponse {
 	private final String name;
-	private final Integer stops;
+	private final Long stops;
 	private final String urlResource;
 
-	public CalculateStopsResponse(final String name, final Integer stops, final String urlResource) {
+	public CalculateStopsResponse(final String name, final Long stops, final String urlResource) {
 		this.name = name;
 		this.stops = stops;
 		this.urlResource = urlResource;
@@ -15,7 +18,7 @@ public class CalculateStopsResponse {
 		return name;
 	}
 
-	public final Integer getStops() {
+	public final Long getStops() {
 		return stops;
 	}
 

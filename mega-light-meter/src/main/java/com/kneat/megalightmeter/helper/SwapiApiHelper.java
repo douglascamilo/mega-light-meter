@@ -10,17 +10,23 @@ import org.springframework.web.client.RestTemplate;
 import com.kneat.megalightmeter.model.StarShipResource;
 
 /**
- * This class encloses the complexity of handling with http requests.
+ * This class encloses the complexity of handling http requests.
  */
 @Component
 public class SwapiApiHelper {
 	@Autowired private RestTemplate restTemplate;
 
-	public <T> T retrieveStarShipsFrom(final String url, final Class<T> responseType) {
+	/**
+	 * Retrieves all Starships from the given {@code url}.
+	 *
+	 * @param url - Target url.
+	 * @return {@linkplain StarShipResource} containing Starships data and resource url for the next page.
+	 */
+	public StarShipResource retrieveStarShipsFrom(final String url) {
 		final HttpEntity<StarShipResource> httpHeaders = this.createRequestHeader();
 
 		return restTemplate
-				.exchange(url, HttpMethod.GET, httpHeaders, responseType)
+				.exchange(url, HttpMethod.GET, httpHeaders, StarShipResource.class)
 				.getBody();
 	}
 

@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 /**
  * This implementation converts consumable in years to hours.
  */
-@Component(YearsConsumableConverter.BEAN_NAME)
-public class YearsConsumableConverter implements ConsumableConverter {
-	public static final String BEAN_NAME = "YearsConsumableConverter";
+@Component(YearToHourConsumableConverter.BEAN_NAME)
+public class YearToHourConsumableConverter implements ConsumableConverter {
+	public static final String BEAN_NAME = "YearToHourConsumableConverter";
 
-	@Autowired DaysConsumableConverter daysConverter;
+	@Autowired private DayToHourConsumableConverter dayToHourConverter;
 
 	/**
 	 * {@inheritDoc}
@@ -18,6 +18,6 @@ public class YearsConsumableConverter implements ConsumableConverter {
 	@Override
 	public Integer converter(final Integer consumables) {
 		final Integer consumablesInDays = consumables * 365;
-		return daysConverter.converter(consumablesInDays);
+		return dayToHourConverter.converter(consumablesInDays);
 	}
 }

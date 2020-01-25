@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 /**
  * This implementation converts consumable in days to hours.
  */
-@Component(DaysConsumableConverter.BEAN_NAME)
-public class DaysConsumableConverter implements ConsumableConverter {
-	public static final String BEAN_NAME = "DaysConsumableConverter";
+@Component(DayToHourConsumableConverter.BEAN_NAME)
+public class DayToHourConsumableConverter implements ConsumableConverter {
+	public static final String BEAN_NAME = "DayToHourConsumableConverter";
 
 	/**
 	 * {@inheritDoc}

@@ -12,6 +12,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.kneat.megalightmeter.model.CalculateStopsResponse;
 import com.kneat.megalightmeter.model.StarShip;
 
+/**
+ * Unit tests for {@linkplain CalculateStopsService} class.
+ */
 @SpringBootTest
 public class CalculateStopsServiceTest {
 	@Autowired CalculateStopsService service;
