@@ -1,11 +1,14 @@
 package com.kneat.megalightmeter.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Representation of the data returned by the rest controller.
  */
 public class CalculateStopsResponse {
 	private final String name;
 	private final Long stops;
+	@JsonIgnore
 	private final String urlResource;
 
 	public CalculateStopsResponse(final String name, final Long stops, final String urlResource) {
