@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
 import org.springframework.web.client.RestTemplate;
 
 import com.kneat.megalightmeter.facade.CalculateStopsFacade;
@@ -33,7 +34,10 @@ public class MegaLightMeterApplication {
  	}
 
  	@Bean
- 	public CommandLineRunner run(final CalculateStopsFacade calculateStopsFacade) {
+ 	public CommandLineRunner run(
+ 			final CalculateStopsFacade calculateStopsFacade,
+ 			final Environment environment) {
+
  		return args -> {
  			if (args != null && args.length == 1) {
  				LOGGER.info("Application running on standalone mode...");
@@ -47,6 +51,7 @@ public class MegaLightMeterApplication {
  			}
 
  			LOGGER.info("Application running on http mode...");
+ 			LOGGER.info("Endpoint: http://localhost:" + environment.getProperty("server.port") + "/calculate-stops/");
  		};
  	}
 }
