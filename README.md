@@ -3,7 +3,7 @@ The application was built with Java and Spring Boot.
 
 You need Java 8 or newer installed before running the application.
 
-The runnable jar will be in ${project_folder}/target/mega-light-meter-1.0.0.jar
+The runnable jar file can be found at ${project_folder}/target/mega-light-meter-1.0.0.jar
 
 ## Running the application
 The Application can be run in two modes. Standalone or HTTP mode.
