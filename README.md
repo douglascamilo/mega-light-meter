@@ -8,7 +8,7 @@ The runnable jar file can be found at ${project_folder}/target/mega-light-meter-
 ## Running the application
 The Application can be run in two modes. Standalone or HTTP mode.
 
-## Running in Standalone mode
+## Running on Standalone mode
 Open terminal and navigate to project target folder and run the following command:
 
 ```bash
@@ -19,7 +19,7 @@ PS: Where ${DISTANCE_IN_MGLT} need to be replaced by desired distance for the ca
 
 When running in this mode, the application will log all the requests to swapi.co and, at the end, it logs all the starship's names and required stops for resupply.
 
-## Running in HTTP mode
+## Running on HTTP mode
 
 Open terminal and navigate to project target folder and run the following command:
 
