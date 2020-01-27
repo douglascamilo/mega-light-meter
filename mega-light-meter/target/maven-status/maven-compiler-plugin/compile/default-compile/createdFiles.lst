@@ -6,12 +6,14 @@ com/kneat/megalightmeter/enums/ConsumablesUnitEnum.class
 com/kneat/megalightmeter/helper/SwapiApiHelper.class
 com/kneat/megalightmeter/MegaLightMeterApplication.class
 com/kneat/megalightmeter/model/CalculateStopsResponse.class
+com/kneat/megalightmeter/service/run/KneatCommandLineRunner.class
 com/kneat/megalightmeter/service/SwapiApiService.class
 com/kneat/megalightmeter/converter/MonthToHourConsumableConverter.class
 com/kneat/megalightmeter/service/impl/CalculateStopsServiceImpl.class
 com/kneat/megalightmeter/service/impl/SwapiApiServiceImpl.class
 com/kneat/megalightmeter/facade/impl/CalculateStopsFacadeImpl.class
 com/kneat/megalightmeter/model/StarShipResource.class
+com/kneat/megalightmeter/service/environment/EnvironmentService.class
 com/kneat/megalightmeter/converter/ConsumableToHoursConverter.class
 com/kneat/megalightmeter/facade/CalculateStopsFacade.class
 com/kneat/megalightmeter/converter/DayToHourConsumableConverter.class
