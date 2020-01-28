@@ -31,6 +31,6 @@ public class CalculateStopsResponse {
 
 	@Override
 	public String toString() {
-		return "\n" + name + " -> " + stops + " stops";
+		return "\n" + name + ": " + stops;
 	}
 }
