@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kneat.megalightmeter.exception.SwapiApiIntegrationException;
 import com.kneat.megalightmeter.facade.CalculateStopsFacade;
 import com.kneat.megalightmeter.model.CalculateStopsResponse;
 
@@ -20,7 +21,7 @@ public class CalculateStopsController {
 
 	@GetMapping("/calculate-stops/{distance}")
 	public ResponseEntity<List<CalculateStopsResponse>> calculateStops(
-			@PathVariable("distance") final Long distanceInMGLT) {
+			@PathVariable("distance") final Long distanceInMGLT) throws SwapiApiIntegrationException {
 
 		final List<CalculateStopsResponse> response = facade.getAllNeededStopsByStarShip(distanceInMGLT);
 		return ResponseEntity.ok(response);

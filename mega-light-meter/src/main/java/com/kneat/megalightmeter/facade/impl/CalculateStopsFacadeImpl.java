@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kneat.megalightmeter.exception.SwapiApiIntegrationException;
 import com.kneat.megalightmeter.facade.CalculateStopsFacade;
 import com.kneat.megalightmeter.model.CalculateStopsResponse;
 import com.kneat.megalightmeter.model.StarShip;
@@ -23,11 +24,10 @@ public class CalculateStopsFacadeImpl implements CalculateStopsFacade {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public List<CalculateStopsResponse> getAllNeededStopsByStarShip(final Long distanceInMGLT) {
-		final List<StarShip> retrievedStarShips = swapiService.retrieveAllStarShips();
-		final List<CalculateStopsResponse> response =
-				calculateStopsService.calculate(distanceInMGLT, retrievedStarShips);
+	public List<CalculateStopsResponse> getAllNeededStopsByStarShip(final Long distanceInMGLT)
+			throws SwapiApiIntegrationException {
 
-		return response;
+		final List<StarShip> retrievedStarShips = swapiService.retrieveAllStarShips();
+		return calculateStopsService.calculate(distanceInMGLT, retrievedStarShips);
 	}
 }

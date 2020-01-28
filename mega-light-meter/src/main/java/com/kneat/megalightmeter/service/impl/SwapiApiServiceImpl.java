@@ -1,4 +1,4 @@
- package com.kneat.megalightmeter.service.impl;
+package com.kneat.megalightmeter.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
+import com.kneat.megalightmeter.exception.SwapiApiIntegrationException;
 import com.kneat.megalightmeter.helper.SwapiApiHelper;
 import com.kneat.megalightmeter.model.StarShip;
 import com.kneat.megalightmeter.model.StarShipResource;
@@ -28,19 +29,24 @@ public class SwapiApiServiceImpl implements SwapiApiService {
 	 */
 	@Override
 	@Cacheable("starships")
-	public List<StarShip> retrieveAllStarShips() {
-		final List<StarShip> starShips = new ArrayList<>();
-		String url = "https://swapi.co/api/starships";
+	public List<StarShip> retrieveAllStarShips() throws SwapiApiIntegrationException {
+		try {
+			final List<StarShip> starShips = new ArrayList<>();
+			String url = "https://swapi.co/api/starships";
 
-		while(Objects.nonNull(url)) {
-			LOGGER.info("Retrieving data from: " + url);
+			while(Objects.nonNull(url)) {
+				LOGGER.info("Retrieving data from: " + url);
 
-			final StarShipResource resource = helper.retrieveStarShipsFrom(url);
+				final StarShipResource resource = helper.retrieveStarShipsFrom(url);
 
-			url = resource.getNext();
-			starShips.addAll(resource.onlyValidStarShips());
+				url = resource.getNext();
+				starShips.addAll(resource.onlyValidStarShips());
+			}
+
+			return starShips;
+		} catch (final Exception e) {
+			LOGGER.error(e.getMessage());
+			throw new SwapiApiIntegrationException();
 		}
-
-		return starShips;
 	}
 }

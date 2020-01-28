@@ -12,7 +12,7 @@ public abstract class KneatException extends Exception {
 	private static final long serialVersionUID = 2000896977769533798L;
 	private final String[] messageParams;
 
-	public KneatException(final String messageId, final String[] messageParams) {
+	public KneatException(final String messageId, final String... messageParams) {
 		super(messageId);
 		this.messageParams = messageParams;
 	}
