@@ -3,6 +3,8 @@
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/facade/CalculateStopsFacade.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/helper/SwapiApiHelper.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/converter/ConsumableConverter.java
+/home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/exception/SwapiApiIntegrationException.java
+/home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/controller/advice/RestControllerAdvice.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/model/StarShipResource.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/service/environment/EnvironmentService.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/service/CalculateStopsService.java
@@ -15,10 +17,12 @@
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/converter/ConsumableToHoursConverter.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/exception/InvalidConsumablesUnitException.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/exception/KneatException.java
+/home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/controller/advice/ExceptionResponse.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/facade/impl/CalculateStopsFacadeImpl.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/enums/ConsumablesUnitEnum.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/controller/CalculateStopsController.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/MegaLightMeterApplication.java
+/home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/service/impl/MessageService.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/converter/MonthToHourConsumableConverter.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/model/ConsumablesObject.java
 /home/douglas/workspaces/freelance/Kneat/mega-light-meter/src/main/java/com/kneat/megalightmeter/converter/DayToHourConsumableConverter.java
