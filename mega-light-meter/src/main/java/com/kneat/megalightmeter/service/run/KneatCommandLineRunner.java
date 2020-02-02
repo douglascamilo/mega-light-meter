@@ -33,8 +33,8 @@ public class KneatCommandLineRunner {
 				final Long givenDistance = Long.parseLong(args[0]);
 				final List<CalculateStopsResponse> response =
 						calculateStopsFacade.getAllNeededStopsByStarShip(givenDistance);
-
 				LOGGER.info(response.toString());
+
 				System.exit(0);
 			}
 

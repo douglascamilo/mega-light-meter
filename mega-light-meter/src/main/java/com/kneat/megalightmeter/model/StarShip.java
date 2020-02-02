@@ -1,5 +1,6 @@
 package com.kneat.megalightmeter.model;
 
+import java.io.Serializable;
 import java.util.Optional;
 
 import org.apache.logging.log4j.util.Strings;
@@ -9,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 /**
  * Representation of a Star Ship, returned by Swapi API.
  */
-public class StarShip {
+public class StarShip implements Serializable {
+	private static final long serialVersionUID = 6501708725749935359L;
 	private String name;
 	@JsonAlias("MGLT")
 	private String megaLight;

@@ -28,7 +28,7 @@ public class SwapiApiServiceImpl implements SwapiApiService {
 	 * {@inheritDoc}
 	 */
 	@Override
-	@Cacheable("starships")
+	@Cacheable("starships-cached")
 	public List<StarShip> retrieveAllStarShips() throws SwapiApiIntegrationException {
 		try {
 			final List<StarShip> starShips = new ArrayList<>();
