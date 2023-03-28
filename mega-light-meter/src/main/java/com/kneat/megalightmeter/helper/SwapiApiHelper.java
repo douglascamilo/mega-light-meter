@@ -1,11 +1,8 @@
 package com.kneat.megalightmeter.helper;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
 import com.kneat.megalightmeter.model.StarShipResource;
 
@@ -14,7 +11,7 @@ import com.kneat.megalightmeter.model.StarShipResource;
  */
 @Component
 public class SwapiApiHelper {
-	@Autowired private RestTemplate restTemplate;
+//	@Autowired private RestTemplate restTemplate;
 
 	/**
 	 * Retrieves all Starships from the given {@code url}.
@@ -24,10 +21,11 @@ public class SwapiApiHelper {
 	 */
 	public StarShipResource retrieveStarShipsFrom(final String url) {
 		final HttpEntity<StarShipResource> httpHeaders = this.createRequestHeader();
+		return null;
 
-		return restTemplate
-				.exchange(url, HttpMethod.GET, httpHeaders, StarShipResource.class)
-				.getBody();
+//		return restTemplate
+//				.exchange(url, HttpMethod.GET, httpHeaders, StarShipResource.class)
+//				.getBody();
 	}
 
 	private HttpEntity<StarShipResource> createRequestHeader() {

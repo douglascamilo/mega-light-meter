@@ -1,0 +1,12 @@
+spring:
+  redis:
+    host: localhost
+    timeout: 2000
+    port: 6379
+    database: 0
+    
+  cache:
+    redis:
+#      key-prefix: "kneat::"
+      time-to-live: 3600000
+      cache-null-values: false

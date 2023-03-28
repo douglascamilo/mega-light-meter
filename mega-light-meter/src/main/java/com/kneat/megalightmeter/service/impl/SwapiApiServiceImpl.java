@@ -7,7 +7,6 @@ import java.util.Objects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import com.kneat.megalightmeter.exception.SwapiApiIntegrationException;
@@ -28,7 +27,7 @@ public class SwapiApiServiceImpl implements SwapiApiService {
 	 * {@inheritDoc}
 	 */
 	@Override
-	@Cacheable("starships-cached")
+//	@Cacheable("starships-cached")
 	public List<StarShip> retrieveAllStarShips() throws SwapiApiIntegrationException {
 		try {
 			final List<StarShip> starShips = new ArrayList<>();

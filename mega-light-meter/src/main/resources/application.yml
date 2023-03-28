@@ -4,14 +4,6 @@ server:
 spring:
   messages:
     basename: messages
-    
-  redis:
-    host: localhost
-    timeout: 2000
-    port: 6379
-    database: 0
-    
-  cache:
-    redis:
-      key-prefix: "kneat::"
-      time-to-live: 30000 
+  mvc:
+    async:
+      request-timeout: 90
